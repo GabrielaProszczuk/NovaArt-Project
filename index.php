@@ -14,6 +14,7 @@
 	<link rel="stylesheet"href="style.css" type="text/css"/>
 	<link rel="stylesheet"href="css/fontello.css" type="text/css"/>
 	<script src="jquery-3.5.1.min.js"></script>
+	<link href="lightbox2-2.11.3/src/css/lightbox.css" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap" rel="stylesheet"> 
 	<script src="ajax.js"></script>
 	<title>Welcome to Nova Art!</title>
@@ -35,7 +36,43 @@
 		color:#EC9900;
 		text-decoration: none;
 	}
-
+	.about{
+		display: none;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		width:90%;
+		max-width:1000px;
+		margin-left: auto;
+		margin-right: auto;
+		color:white;
+		min-height: 650px;
+		padding-top: 20px;
+		background-color: rgb(0, 0, 0, .6);
+	}
+	#arrow{
+		position: relative;
+		color: white;
+		left:30px;
+		margin-top: 90px;
+	}
+	#arrow:hover{
+		opacity: 0.8;
+		cursor: pointer;
+	}
+	#arrow2{
+		position: relative;
+		color: white;
+		left:15%;
+		bottom: 30px;
+		margin-top: 20px;
+	}
+	#arrow2:hover{
+		opacity: 0.8;
+		cursor: pointer;
+	}
+	.mostPopular{
+		display: none;
+	}
 	</style>
 
 
@@ -92,7 +129,7 @@
 		</header>
 	
 		<main id="content">
-			<div class="container">
+			<div class="container mainPage">
 				<section class="welcome">
 					<div class="row">
 							<div class="col-12">
@@ -109,13 +146,13 @@
 				<div class="row">
 					
 						<div class="col-md-6 col-lg-4">
-						<a class="btn" href="aboutNA.php">Lear more about<br/> Nova Art!</a>
+						<a class="btn" href="#" onClick="hideContent()" >Lear more about<br/> Nova Art!</a>
 						</div>
 						<div class="col-md-6 col-lg-4">
 						<a class="btn" href="#" onClick="showContact()" >Contact us!</a>
 						</div>
 						<div class="col-md-6 col-lg-4 offset-md-3 offset-lg-0">
-						<a class="btn" href="popular.php">Explore the<br/>most popular!</a>
+						<a class="btn" href="#" onClick="showPopular()">Explore the<br/>most popular!</a>
 						</div>
 			 			
 					
@@ -134,7 +171,157 @@
 				</div>
 				</div>
 			</div>
+			<section class="about">
+				
+				<div class="container">
+				<div class="row">
+				<div class="col-12">
+				<header><p class="aboutTitle">The perfect place to share your art!</p></header>
+				<section class="description">Founded in August 2020, NovaArt is a great online social network for artists and art enthusiasts, 
+				and a platform for emerging and established artists to exhibit, promote, and share their works with an enthusiastic, art-centric community. <br/><br/>
+				Safe space for everyone connected to art. No matter your skills, your art is always welcome! Connect with other artists, learn and teach. Keep it small as your artistic diary or be as loud as you like in promotion of your artworks. All is up to you. <br/> <br/> 
+				Network is still growing, gaining new users and our team is working continually to make it higher quality. If you have anythhing on mind that would enrich NovaArt, let us know.
+				<br/> <br/>
+				And for now, have fun using Nova Art and create!
+				</section>
+				
+				</div>
+				</div>
+				
+				</div>
+				<img src="backArrow.svg" onClick="hideAbout()" width=80 id="arrow" />
+			</section>
+			
+		<section class="mostPopular">
+			<div class="container">
+				<header id="profile">
+					<div class="row">
+						<div class="col-12">
+						<br/>
+						<p id="text">The most popular artworks</p>
+						</div>
+					</div>
+				</header>
+			<section id="grid">
+			<?php
+				require_once "connect.php";
+		
+					$connection = @new mysqli($host, $db_user, $db_password, $db_name);
+					if(isset($_SESSION['user'])){
+						$user = $_SESSION['user'];
+					}
+				//tu było nawiązywanie połączenia
+				if($connection->connect_errno!=0){
+					 	
+					echo "Error: ".$connection->connect_errno;
+				}
+				else{
+					
+					
+					
+					if($result = @$connection->query('SELECT * FROM images order by likes desc')){
+						
+						$images = $result->num_rows;
+						
+						if($images>0){
+						//kolumny z obrazami zalogowanego użytkownika
+							
+							while ($row = $result->fetch_assoc()) {
+			       			
+							$path = "./gallery";
+
+							if ($handle = opendir($path)) {
+							    while (false !== ($file = readdir($handle))) {
+								if ('.' === $file) continue;
+								if ('..' === $file) continue;
+								if($file==$row['id'].".jpg" || $file==$row['id'].".png" || $file==$row['id'].".jpeg" || $file==$row['id'].".gif" ){
+								
+									if($result2 = @$connection->query('SELECT * FROM likes where person = "'.$user.'" AND idImage = "'.$row['id'].'"')){
+										
+										$likes = $result2->num_rows;
+								
+										if($likes>0 ){echo '
+										 
+											
+												<div class="overlay">
+													<a href="gallery/'.$file.'" data-lightbox="artworks" data-title="'.$row['title'].'" ><img class="image" src="gallery/'.$file.'"></a>
+													<a class="desc">
+													<span style="font-size:20px;">'.$row['title'].'</span>
+													&nbsp '.$row['owner'];
+													if(isset($_SESSION['logged'])){
+													echo '
+													<span id="likes'.$row['id'].'">
+														<span style="font-size:16px;"> 
+														&nbsp Likes '.$row['likes'].'&nbsp 
+														<span style="color:#EC9900;"><i onClick="subLike('.$row['id'].')" id ="heart" class="icon-heart"></i>&nbsp &nbsp </span>
+														
+														</span>';
+													}
+													echo'
+													
+													</span>
+													</span><br/><br/> </a>
+												</div>
+					
+											
+											';
+										    }
+										    else{ echo '
+										    
+										
+												<div class="overlay">
+													<a href="gallery/'.$file.'" data-lightbox="artworks" data-title="'.$row['title'].'" ><img class="image" src="gallery/'.$file.'"></a>
+													<a class="desc">
+													<span style="font-size:20px;">'.$row['title'].'</span>
+													&nbsp '.$row['owner'];
+													if(isset($_SESSION['logged'])){
+													echo '
+													<span id="likes'.$row['id'].'">
+														<span style="font-size:16px;"> 
+														&nbsp Likes '.$row['likes'].'&nbsp 
+														<span style="color:white;"><i onClick="addLike('.$row['id'].')" id ="heart" class="icon-heart"></i>&nbsp &nbsp </span>
+														
+														</span>';
+													}
+													echo'
+													</span>
+													</span><br/><br/>	
+													 </a>
+												</div>
+					
+											';
+										    }
+										}    
+								}
+								
+							    }
+							    closedir($handle);
+							}
+							}	
+							
+							
+						}else{
+							echo '<span style="color:white;">&nbsp No artwork added yet.</span>';
+						}
+						
+			    		}
+
+						
+					$connection->close();
+				}
+				
+		
+		
+			?>
+			
+		</section>
+		
+		</div>
+		<img src="backArrow.svg" onClick="hidePopular()" width=50 id="arrow2" />
+		</section>
+		
 		</main>
+		
 		<footer id= "footer"> Thanks for visiting!</footer>
 	
 	<?php
@@ -143,9 +330,9 @@
 			echo $_SESSION['error'];
 		}
 	?>
-	
+	<script src="lightbox2-2.11.3/src/js/lightbox.js"></script>
  	 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     	<script src="../bootstrap/js/bootstrap.min.js"></script>
-	
+
 </body>
 </html>

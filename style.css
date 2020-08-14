@@ -103,6 +103,7 @@ ul > li{
 	font-size: 30px;
 	margin-left: 20px;
 	color:white;
+	
 }
 .description{
 	font-family: 'Red Rose', cursive;
@@ -111,21 +112,9 @@ ul > li{
 	margin-right: 20px;
 	text-align: justify;
 	margin-top: 20px;
-	
 		
 }
-.about{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	width:90%;
-	max-width:1000px;
-	margin-left: auto;
-	margin-right: auto;
-	color:white;
-	min-height: 750px;
-	padding-top: 20px;
-	background-color: rgb(0, 0, 0, .6);
-}
+
 #login{
 	margin-left: auto;
 	margin-right: auto;
@@ -139,6 +128,7 @@ ul > li{
 	font-size: 20px;
 	margin-bottom: 50px;
 }
+
 .add{
 	margin-left: auto;
 	margin-right: auto;
@@ -289,7 +279,7 @@ ul > li{
 	display:inline-block;
 	background-color: rgb(0, 0, 0, .3);
   	text-align: center;
-  	width: 200px;
+  	width: 250px;
   	padding: 20px;
   	text-decoration: none;
   	color: white;

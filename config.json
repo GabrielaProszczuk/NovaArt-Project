@@ -77,6 +77,12 @@
       "css": "laptop",
       "code": 59400,
       "src": "elusive"
+    },
+    {
+      "uid": "555ef8c86832e686fef85f7af2eb7cde",
+      "css": "left-big",
+      "code": 59401,
+      "src": "fontawesome"
     }
   ]
 }

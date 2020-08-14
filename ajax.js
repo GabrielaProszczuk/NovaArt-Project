@@ -59,11 +59,39 @@ function hideComments(){
 		document.querySelector('.popup').style.display = "none";
 
 }
-
+//show contact section
 function showContact(){
-	//document.getElementById('contact').style.display = "block";
 	$("#contact").show("slow");
 }
 
+//hide main page and show about section
+function hideContent(){
+	document.querySelector('.mainPage').style.display = "none";
+	myVar = setTimeout(showAbout, 100);
+}
+function showAbout(){
+	$(".about").show("slow");
+}
+
+//hide about section and back to main page
+function hideAbout(){
+	document.querySelector('.about').style.display = "none";
+	myVar = setTimeout(showContent, 100);
+}
+function showContent(){
+	$(".mainPage").show("slow");
+}
+
+//hide main page and show popular section
+function showPopular(){
+	document.querySelector('.mainPage').style.display = "none";
+	$(".mostPopular").show("slow");
+}
+//hide popular and show main
+
+function hidePopular(){
+	document.querySelector('.mostPopular').style.display = "none";
+	myVar = setTimeout(showContent, 100);
+}
 
 
