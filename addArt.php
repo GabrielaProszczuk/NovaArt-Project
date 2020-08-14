@@ -3,7 +3,7 @@
 	session_start();
 	
 	if(!isset($_SESSION['logged'])){
-		header('Location: index.php');
+		header('Location: logWindow.php');
 		exit();
 		}
 	
@@ -22,13 +22,7 @@
 		
 		$category = $_POST['category'];
 		//category doesnt have rules
-		
-	
-		    	
-		
-		
-		
-		
+				
 		require_once "connect.php";
 		
 		mysqli_report(MYSQLI_REPORT_STRICT);
@@ -51,7 +45,9 @@
 						if($connection->query("INSERT INTO images VALUES($col[id]+1, '$_SESSION[user]' , '$category' , '0' , '0' , '$title' , '$description' )")){
 							
 								$name = $_FILES["img"]["name"];
-								$newfilename= ($col['id']+1).'.png';
+								$type = substr($mimetype,6);
+								echo $mimetype;
+								$newfilename= ($col['id']+1).'.'.$type;
 								if(isset($name) and !empty($name)){     
 								    if(move_uploaded_file($_FILES["img"]["tmp_name"], "gallery/" . $newfilename)){
 									$_SESSION['correctAdd']=true;
@@ -79,8 +75,7 @@
 		
 		}catch(Exception $e){
 			echo '<span style="color: red;">Error</span>';
-			//info dla developera, a nie klienta
-			echo '<br/>Error: '.$e;
+			
 		}
 	}
 	
@@ -106,8 +101,8 @@
 </head>
 
 <body>
-	<div id="add">
-		<div id="title"><a class="addMenu" href="index.php">Add your piece to Nova Art</a></div>
+	<main class="add">
+		<header><p id="title"><a class="addMenu" href="index.php">Add your piece to Nova Art</a></p><header>
 		<form method="POST" ENCTYPE="multipart/form-data">
 			<input type="text" class="logWin" name="title" placeholder="Title"><br/>
 			 <?php 
@@ -144,7 +139,7 @@
 				<input type="submit" class="button" value="Add"/>
 			
 		</form>
-	</div>
+	</main>
 	
 </body>
 </html>

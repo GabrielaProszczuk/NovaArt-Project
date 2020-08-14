@@ -21,12 +21,13 @@
 	<link rel="stylesheet"href="style.css" type="text/css"/>
 	<link rel="stylesheet"href="css/fontello.css" type="text/css"/>
 	<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap" rel="stylesheet"> 
-	<title>Hi</title>
+	<title>Welcome</title>
 </head>
 
 <body>
-	<div id="login">
-		<div id="title"><a class="logMenu" href="index.php">Thank you for registering, please log in!</a></div>
+	<main id="login">
+	
+		<header><p id="title"><a class="logMenu" href="index.php">Thank you for registering, log in!</a></p></header>
 		<form action="login.php"  method="post">
 			<i class="icon-user-circle"></i><input type="text"  class="logWin" name="login" placeholder="Login"/>
 			<br/><br/>
@@ -36,8 +37,7 @@
 		
 		</form>
 		<br/><br/>
-		
-	</div>
+	</main>
 	<?php
 		if(isset($_SESSION['error'])){
 	

@@ -132,8 +132,8 @@
 </head>
 
 <body>
-	<div id="login">
-	<div id="title"><a class="logMenu" href="index.php">Welcome to Nova Art</a></div>
+	<main id="login">
+	<header><p id="title"><a class="logMenu" href="index.php">Welcome to Nova Art</a></p></header>
 		<form method="post">
 			 
 			<i class="icon-user-circle"></i> 
@@ -183,10 +183,8 @@
 			 		unset($_SESSION['e_bot']);
 			 }
 			 ?>
-			<input type="submit" class="button" value="register"/>
-
-			 
+			<input type="submit" class="button" value="register"/>	 
 		</form>
-	</div>
+	</main>
 </body>
 </html>

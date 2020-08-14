@@ -7,7 +7,126 @@ body{
  
 }
 
-div#login{
+.container{
+	width:100%;
+	
+}
+
+/*header with nav*/
+.navbar{
+	width: 100%;
+	background-color: rgb(0, 0, 0, .7);
+	color: white;
+	min-height:93px;
+	
+}
+
+@media (max-width: 1900px) {
+	.navbar-brand{
+	padding-left: 20px;
+	font-size: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: 'Red Rose', cursive;
+	margin-right: 580px;
+	}
+}
+
+@media (max-width: 1700px) {
+	.navbar-brand{
+	padding-left: 20px;
+	font-size: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: 'Red Rose', cursive;
+	margin-right: 20px;	
+	}
+}
+
+
+.welcome{
+	color:white;
+	text-align: center;
+	font-size: 42px;
+	}
+		
+ul{	
+	margin-top:15px;
+	list-style-type: none;
+	font-size: 22px;		
+	display: inline-block;
+	margin-top:15px;
+	
+}
+
+
+ul > li{
+	
+	border-radius: 5px;
+	float:left;
+	width:140px;
+	
+}
+
+.dropdown-menu{
+	background-color: rgb(0, 0, 0, .8);
+}
+.dropdown-item{
+	margin-top:0;
+	font-size: 18px;
+	color: #258e79;
+	
+}
+.dropdown-item:hover{
+	background: none;
+	
+}
+.category{
+	border-radius: 5px;
+	text-decoration: none;
+	color:white;
+	background-color: rgb(0, 0, 0, .5);
+	font-size: 20px;
+	border: none;
+
+}
+.category:hover{
+	color:white;
+	background-color: #2DAC93;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+.aboutTitle{
+	font-family: 'Red Rose', cursive;
+	font-size: 30px;
+	margin-left: 20px;
+	color:white;
+}
+.description{
+	font-family: 'Red Rose', cursive;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: justify;
+	margin-top: 20px;
+	
+		
+}
+.about{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width:90%;
+	max-width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+	color:white;
+	min-height: 750px;
+	padding-top: 20px;
+	background-color: rgb(0, 0, 0, .6);
+}
+#login{
 	margin-left: auto;
 	margin-right: auto;
 	width:500px;
@@ -18,8 +137,9 @@ div#login{
 	text-align: center;
 	min-height: 450px;
 	font-size: 20px;
+	margin-bottom: 50px;
 }
-div#add{
+.add{
 	margin-left: auto;
 	margin-right: auto;
 	min-width:500px;
@@ -39,10 +159,14 @@ div#add{
 	border-left: 0px;
 	border-radius: 5px;
 	padding: 5px;
+	margin-bottom: 20px;
 	background-color: rgb(0, 0, 0, .6);
 	color: white;
-	font-size: 20px;
+	font-size: 18px;
+
 }
+
+
 .button{
 	margin-top: 15px;
 	background-color: rgb(45, 172, 147, .6);
@@ -59,8 +183,9 @@ div#add{
 	color: black;
 	cursor: pointer;
 }
-div#registerLink{
+#registerLink{
 	font-size: 15px;
+	margin-bottom:10px;
 }
 .reg{
 	text-decoration:none;
@@ -72,7 +197,7 @@ div#registerLink{
 .g-recaptcha{
 	margin-left: 100px;
 }
-div#title{
+#title{
 	font-family: 'Red Rose', cursive;
 	font-size: 25px;
 	background-color: rgb(0, 0, 0, .7);
@@ -82,109 +207,29 @@ div#title{
 	margin-bottom: 50px;
 }
 
-div#top{
-	width: 100%;
-	background-color: rgb(0, 0, 0, .7);
-	color: white;
-}
-div#logo{
-	padding-left: 40px;
-	font-size: 50px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-family: 'Red Rose', cursive;
-	float: left;
-	margin-right: 500px;
-	
-}
-div#menu{
-	font-size: 20px;
-	float: left;	
-	margin-top: 15px;
-	text-align: right;
-	
-}
 
-ul{
-	margin-top:10px;
-	padding:0;
-	list-style-type: none;
-	font-size: 20px;
-	height: 50px;	
-	text-align: center;
-	display: inline-block;
-}
-
-ul a{
-	text-decoration:none;
-	display: block;
-	border-radius: 5px;
-}
-
-ul > li{
-	border-radius: 5px;
-	float:left;
-	width: 150px;
-	height: 30px;
-	margin-top:10px;
-}
-
-ul > li:hover{
-	background-color: #2DAC93;
-	cursor: pointer;
-}
-ul > li:hover > a{
-	background-color: #2DAC93;
-	cursor: pointer;
-
-}
-
-ul > li > ol{
-	list-style-type: none;
-	padding:0;
-	margin:0;
-	height:30px;
-	display:none;
-}
-
-ul > li:hover >ol{
-	display:block;
-}
-ul > li > ol > li{
-	background-color:  #258e79;
-	position:relative;
-	z-index:100;
-}
-ul > li > ol >li:hover{
-	background-color: #2DAC93;
-	cursor: pointer;
-}
-ul > li > ol >li:hover > a{
-	background-color: #2DAC93;
-	cursor: pointer;
-	color:white;
-
-}
-div#content{
+#content{
 	margin-top: 70px;
 	margin-left: auto;
 	margin-right: auto;
-	width:1000px;
+	width:90%;
 	color:white;
-	min-height: 745px;
+	min-height: 720px;
 }
-div#buttons{	
+#buttons{	
 	font-size: 20px;
 	margin-left:5px;
+	width:1000px;
 	color:white;
 	margin-top: 100px;
 }
-div#welcome{
+.welcome{
 	color:white;
 	text-align: center;
-	font-size: 40px;
+	font-size: 42px;
 }
-div#links{
+
+#links{
 	margin-top: 30px;
 }
 
@@ -196,30 +241,51 @@ div#links{
 .logMenu{
 	text-decoration: none;
 	color:white;
+	
 }
+
 .addMenu{
 	text-decoration: none;
 	color:white;
 }
-.log:hover{
-	color:#EC9900;
-}
+
+
+
 
 .btn {
   display:block;
-  float:left;
-  height: 150px;
+  height: 250px;
   width: 250px;
   border-radius: 50%;
   background-color: rgb(0, 0, 0, .7);
-  padding-top: 100px;
+  padding-top: 85px;
   text-align: center;
   margin: 40px;
+  font-size: 28px;
   text-decoration: none;
   color:white; 
   transition: all 0.3s ease-in-out;
 }
 .addBtn{
+	position:relative;
+	top:0px;
+	left:60%;
+	background-color: rgb(0, 0, 0, .3);
+  	text-align: center;
+ 	width:30%;
+  	text-decoration: none;
+  	padding:10px;
+  	color: white;
+  	border-bottom: 2px solid #2DAC93;
+  	display:block;
+}
+.addBtn:hover{
+	background-color: rgb(0, 0, 0, .6);
+	cursor: pointer;
+	color: #2DAC93;
+	text-decoration: none;
+}
+.visitBtn{
 	display:inline-block;
 	background-color: rgb(0, 0, 0, .3);
   	text-align: center;
@@ -228,13 +294,26 @@ div#links{
   	text-decoration: none;
   	color: white;
   	margin-top: 10px;
-  	margin-left: 500px;
+  	font-size: 15px;
+  	border:none;
   	border-bottom: 2px solid #2DAC93;
 }
-.addBtn:hover{
+.visitBtn:hover{
 	background-color: rgb(0, 0, 0, .6);
 	cursor: pointer;
 	color: #2DAC93;
+}
+.userData{
+	float:left;
+	margin-top: 20px;
+	margin-left: 30px;
+	font-size: 30px;
+	
+}
+.profileLink{
+	float:right;
+	margin-right: 100px;
+	
 }
 .btn:hover{
 	cursor: pointer;
@@ -242,9 +321,39 @@ div#links{
 	color:#EC9900;
 }
 
-div#profile{
+#profile{
 	min-height: 150px;
-	width:960px;
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgb(0, 0, 0, .9);
+	color: white;
+	font-family: 'Red Rose', cursive;
+	font-size: 20px;
+	padding: 20px;
+	padding-left: 30px;
+	margin-top: 20px;
+	
+}
+#user{
+	margin-left: 0px;
+	max-width: 300px;
+	font-size: 40px; 
+	margin-bottom: 0px;
+	margin-top: 0px;
+	text-align: left;
+}
+#text{
+	margin-left: 0px;
+	font-size: 40px; 
+	margin-bottom: 0px;
+	margin-top: 0px;
+	text-align: left;
+}
+#searchResult{
+	min-height: 760px;
+	max-width:960px;
+	width:90%;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: rgb(0, 0, 0, .9);
@@ -253,13 +362,21 @@ div#profile{
 	font-size: 20px;
 	padding: 20px;
 	margin-top: 20px;
+	margin-bottom: 10px;
 }
-
+#heart:hover{
+	color: #EC9900;
+	cursor: pointer;
+}
+.comment:hover{
+	color:#EC9900;
+	cursor: pointer;
+}
 .image{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 600px;	
+	width: 100%;	
 	padding-top: 10px;
 	transition: all 0.3s ease-in-out;
 
@@ -268,11 +385,12 @@ div#profile{
 	cursor: pointer;
 }
 .photo{
-	width: 600px;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
-	margin-top: 10px;	
+	margin-top: 10px;
+		
 }
 
 .overlay{
@@ -284,8 +402,8 @@ div#profile{
 	padding: 15px;
  	position: absolute;
  	display: block;
- 	width: calc(100% - 30px);
- 	max-height: 80px;
+ 	width: 100%;
+ 	max-height: 100px;
  	background-color: #111;
  	left:0px;
  	bottom: 0px;
@@ -299,8 +417,9 @@ div#profile{
 .overlay:hover .desc{ 
  	opacity: 0.8;
 }
-div#images{
-	width: 1000px;
+
+#images{
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-bottom: 20px;
@@ -309,17 +428,143 @@ div#images{
 	margin-bottom: 20px;
 	background-color: rgb(0, 0, 0, .8);
 }
+.popup{
+	background-color: rgb(0, 0, 0, .4);
+	width:100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left:0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	 z-index: 100;
+	 color: white;
+}
+.close{
+	border-radius: 50%;
+}
+.singleComment{
+	text-align: left;
+	font-size: 18px;
+	margin-left: 20px;
+	margin-bottom: 0px;
+	
+}
+.commentInfo{
+	font-size: 12px;
+	margin-top: 0px;
+	color: #9C9C9C;
+}
+#comments{
+	height: 350px;
+	width: 700px;
+	background-color: rgb(0, 0, 0, .6);
+	padding: 20px;
+	border-radius: 5px;
+	position: relative;
+	overflow-y: auto;
+}
 
-div#footer{
-	position: static;
+.comWin{
+	border-bottom: 2px solid #2DAC93;
+	border-top: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 20px;
+	background-color: rgb(0, 0, 0, .6);
+	color: white;
+	font-size: 18px;
+	float: left;
+	margin-right: 50px;
+	
+}
+
+.comBtn{
+	background-color: rgb(0, 0, 0, .3);
+  	text-align: center;
+  	margin-top: 0px;
+  	text-decoration: none;
+  	padding:10px;
+  	color: white;
+  	font-size: 12px;
+  	border-bottom: 2px solid #2DAC93;
+  	display:block;
+}
+.comBtn:hover{
+	background-color: rgb(0, 0, 0, .6);
+	cursor: pointer;
+	color: #2DAC93;
+	text-decoration: none;
+}
+div#popular{
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+	padding-top: 40px;
+	height: 70px;
+	margin-bottom: 20px;
+	background-color: rgb(0, 0, 0, .9);
+	margin-top:20px;
+	font-family: 'Red Rose', cursive;
+	font-size: 30px;
+	padding-left:20px;
+	color:white;
+}
+#grid {
+  /* Prevent vertical gaps */
+  background-color: rgb(0, 0, 0, .8);
+  margin-left: auto;
+  margin-right:auto;
+  width: 90%;
+  max-width:1000px;
+  min-height:597px;
+  line-height: 0;
+  padding:15px;
+  padding-top:10px;
+  margin-bottom:20px;
+   
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  grid-gap:           10px;  
+}
+
+#grid img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+@media (max-width: 1200px) {
+ #grid {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 1000px) {
+  #grid {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+#footer{
+	
 	background-color: black;
 	color: white;
 	width:100%;
-	height:10px;
 	font-size: 15px;
 	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
 	
 }
 

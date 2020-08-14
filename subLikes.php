@@ -5,7 +5,6 @@ session_start();
 $user = $_SESSION['user'];
 $connection = new mysqli($host, $db_user, $db_password, $db_name);
 
-//Check if POST value exists 
 if($connection->connect_errno!=0){
 		 	
 		echo "Error: ".$connection->connect_errno;
