@@ -128,7 +128,7 @@
 			
 		</header>
 	
-		<main id="content">
+		<main id="content" style = "min-height: 760px;">
 			<div class="container mainPage">
 				<section class="welcome">
 					<div class="row">

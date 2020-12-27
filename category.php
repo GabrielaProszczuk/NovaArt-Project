@@ -80,8 +80,8 @@
 			</nav>
 			
 		</header>
-	<main>
-		<div class="container">
+	<main style = "min-height: 830px;"> >
+		<div class="container" >
 			<header id="profile">
 				<div class="row">
 					<div class="col-12">
