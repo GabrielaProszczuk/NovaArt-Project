@@ -47,7 +47,7 @@
 			$_SESSION['e_regulations']="Accept the regulations!";
 		}
 		
-		$key = "6LemFrUZAAAAAGM9K0yV7WF2Oq5Pgi8piBGpKcoY";
+		$key = "6LcS3xYaAAAAALR9JcWfa0aTY3Kh4RJvSpYqnalm";
 		
 		$check = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$key."&response=".$_POST['g-recaptcha-response']);
 		
@@ -120,7 +120,7 @@
 	<link rel="stylesheet"href="style.css" type="text/css"/>
 	<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet"href="css/fontello.css" type="text/css"/>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	 <script src="https://www.google.com/recaptcha/api.js"></script>
 	<style>
 	
 		.error{
@@ -175,7 +175,7 @@
 			 		unset($_SESSION['e_regulations']);
 			 }
 			 ?>
-			<div class="g-recaptcha" data-sitekey="6LemFrUZAAAAAJknd1mHMbLPOP8vBBcQzRVGV2Dt"></div>
+			<div class="g-recaptcha" data-sitekey="6LcS3xYaAAAAAFyTb9VS_nEue7YdeyfXoduercGY"></div>
 			<br/>
 			<?php 
 			 	if(isset($_SESSION['e_bot'])) {
