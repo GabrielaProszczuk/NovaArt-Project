@@ -14,3 +14,6 @@ They can comment and add likes to chosen works and filter all NovaArt content by
 5. HTML5
 
 6. PHP
+
+### Live version
+App is deployed on Heroku and is available under this link https://nova-art.herokuapp.com/index.php
